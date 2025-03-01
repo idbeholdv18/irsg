@@ -1,7 +1,15 @@
-import React from 'react';
+import { FC, ReactNode } from "react";
+import clsx from "clsx";
 
-const <%= sliceName %>Component: React.FC = () => {
-  return <div><%= sliceName %> component</div>;
+interface <%= name %>Props {
+  className?: string;
+  children: ReactNode;
+}
+
+export const <%= name %>: FC<<%= name %>Props> = (props) => {
+  return (
+    <div className={clsx("", props.className)}>
+      {props.children}
+    </div>
+  );
 };
-
-export default <%= sliceName %>Component;
