@@ -1,16 +1,22 @@
 {
   "compilerOptions": {
-    "outDir": "dist",
-    "target": "ESNext",
-    "module": "CommonJS",
-    "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
-    "strict": true,
+    "target": "ES6",
+    "module": "ESNext",
     "moduleResolution": "node",
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist",
     "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "skipLibCheck": true
+    "declaration": true,
+    "declarationDir": "./dist/types"
   },
-  "include": ["src", "tsup.config.ts"]
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
+  "include": ["src/**/*.ts"]
 }
