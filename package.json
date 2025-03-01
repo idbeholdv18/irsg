@@ -1,7 +1,9 @@
 {
   "name": "irsg",
   "version": "0.0.3",
-  "main": "dist/index.js",
+  "bin": {
+    "irsg": "dist/index.js"
+  },
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "files": [
@@ -25,10 +27,17 @@
   "license": "MIT",
   "description": "Interactive react slice generator",
   "devDependencies": {
+    "@types/degit": "^2.8.6",
+    "@types/node": "^22.13.8",
     "@typescript-eslint/eslint-plugin": "^8.25.0",
     "@typescript-eslint/parser": "^8.25.0",
     "eslint": "^9.21.0",
     "tsup": "^8.4.0",
     "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "commander": "^13.1.0",
+    "degit": "^2.8.4"
   }
 }
