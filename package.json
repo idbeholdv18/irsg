@@ -1,0 +1,34 @@
+{
+  "name": "irsg",
+  "version": "0.0.2",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/idbeholdv18/irsg.git"
+  },
+  "scripts": {
+    "build": "tsup",
+    "lint": "eslint src --ext .ts",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "typescript",
+    "npm-package",
+    "example"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "description": "Interactive react slice generator",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.25.0",
+    "@typescript-eslint/parser": "^8.25.0",
+    "eslint": "^9.21.0",
+    "tsup": "^8.4.0",
+    "typescript": "^5.7.3"
+  }
+}
