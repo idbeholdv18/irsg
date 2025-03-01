@@ -1,6 +1,6 @@
 {
   "name": "irsg",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "bin": {
     "irsg": "dist/main.bundle.js"
   },
