@@ -1,6 +1,6 @@
-import path from "path";
-import { Configuration } from "webpack";
 import CopyPlugin from "copy-webpack-plugin";
+import path from "path";
+import { BannerPlugin, Configuration } from "webpack";
 
 export default (env: { mode: "production" | "development" }): Configuration => {
   return {
@@ -24,6 +24,7 @@ export default (env: { mode: "production" | "development" }): Configuration => {
       ],
     },
     plugins: [
+      new BannerPlugin({ banner: "#!/usr/bin/env node", raw: true }),
       new CopyPlugin({
         patterns: [
           {
