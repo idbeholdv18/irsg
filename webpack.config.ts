@@ -2,9 +2,9 @@ import path from "path";
 import { Configuration } from "webpack";
 import CopyPlugin from "copy-webpack-plugin";
 
-export default (): Configuration => {
+export default (env: { mode: "production" | "development" }): Configuration => {
   return {
-    mode: "development",
+    mode: env.mode,
     entry: {
       main: path.resolve(__dirname, "src", "index.ts"),
     },

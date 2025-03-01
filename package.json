@@ -13,11 +13,11 @@
     "url": "https://github.com/idbeholdv18/irsg.git"
   },
   "scripts": {
-    "build": "webpack",
+    "build:prod": "webpack --env mode=production",
+    "build:dev": "webpack --env mode=development",
     "lint": "eslint src --ext .ts",
-    "prepare": "npm run build",
-    "plop": "plop slice",
-    "tsup": "tsup"
+    "prepare": "npm run build:prod",
+    "plop": "plop slice"
   },
   "keywords": [
     "react",
