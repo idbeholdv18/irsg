@@ -7,6 +7,7 @@ import { generateSlice } from "./generator";
 import { Layer } from "./layers/Layer.enum";
 import { chooseLayer } from "./inquirer/chooseLayer";
 import { chooseName } from "./inquirer/chooseName";
+import { createReactApp } from "./cra";
 
 const program = new Command();
 
@@ -26,6 +27,13 @@ program
   })
   .configureOutput({
     writeErr: (str) => process.stdout.write(chalk.red(`${str}`)),
+  });
+
+program
+  .command("create-app")
+  .description("Creates react app")
+  .action(async (option) => {
+    createReactApp(); 
   });
 
 program.parse(process.argv);
