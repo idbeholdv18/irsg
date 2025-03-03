@@ -3,6 +3,8 @@ import { promptProjectName } from "./inquirer/promptProjectName";
 import degit from "degit";
 import chalk from "chalk";
 import { execSync } from "child_process";
+import { writeFileSync } from "fs";
+import { Config } from "../types/Config.type";
 
 export async function createReactApp() {
   const projectName = await promptProjectName();
@@ -15,6 +17,14 @@ export async function createReactApp() {
   try {
     const emitter = degit(repo, { cache: false, force: true });
     await emitter.clone(destination);
+
+    const config: Config = {
+      projectName,
+      frontendBase: "frontend",
+      backendBase: "backend",
+    };
+    const configPath = path.join(destination, "irsg.config.json");
+    writeFileSync(configPath, JSON.stringify(config, null, 2));
 
     console.log(chalk.yellow("Git initialization..."));
     execSync("git init", { cwd: destination, stdio: "inherit" });
