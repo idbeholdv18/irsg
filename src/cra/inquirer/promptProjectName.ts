@@ -26,7 +26,6 @@ export async function promptProjectName() {
         return projectName;
       }
     } catch (e) {
-      // Обработа ошибки, если пользователь закрыл prompt
       console.log(chalk.red("\nStopped (Ctrl+C)"));
       process.exit(0);
     }
