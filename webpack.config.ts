@@ -28,8 +28,8 @@ export default (env: { mode: "production" | "development" }): Configuration => {
       new CopyPlugin({
         patterns: [
           {
-            from: path.resolve(__dirname, "templates", "slice"),
-            to: path.resolve(__dirname, "dist", "templates", "slice"),
+            from: path.resolve(__dirname, "templates"),
+            to: path.resolve(__dirname, "dist", "templates"),
           },
         ],
       }),
