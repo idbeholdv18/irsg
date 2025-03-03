@@ -1,0 +1,15 @@
+import { E_<%= upper_name %>Action } from "../actions/<%= upper_name %>Action.enum";
+import { T_<%= upper_name %>Actions } from "../actions/<%= upper_name %>Action.type";
+import { T_<%= upper_name %>State } from "../types/<%= upper_name %>State.type";
+
+export function <%= name %>Reducer(
+  state: T_<%= upper_name %>State,
+  action: T_<%= upper_name %>Actions
+): T_<%= upper_name %>State {
+  switch (action.type) {
+    case E_<%= upper_name %>Action.Test:
+      return state;
+    default:
+      return state;
+  }
+}

@@ -1,0 +1,22 @@
+import { FC, ReactNode, useReducer } from "react";
+import {
+  <%= upper_name %>Context,
+  <%= name %>InitialState,
+} from "../context/<%= upper_name %>.context";
+import { <%= name %>Reducer } from "../reducer/<%= upper_name %>.reducer";
+import { Dispatch<%= upper_name %>Context } from "../context/Dispatch<%= upper_name %>.context";
+
+export interface <%= upper_name %>ProviderProps {
+  children: ReactNode;
+}
+
+export const <%= upper_name %>Provider: FC<<%= upper_name %>ProviderProps> = (props) => {
+  const [state, reduce] = useReducer(<%= name %>Reducer, <%= name %>InitialState);
+  return (
+    <<%= upper_name %>Context.Provider value={state}>
+      <Dispatch<%= upper_name %>Context.Provider value={reduce}>
+        {props.children}
+      </Dispatch<%= upper_name %>Context.Provider>
+    </<%= upper_name %>Context.Provider>
+  );
+};

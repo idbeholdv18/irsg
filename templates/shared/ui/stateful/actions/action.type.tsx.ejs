@@ -1,0 +1,5 @@
+import { ActionMap } from "@/shared/types/ActionMap.type";
+import { T_<%= upper_name %>Payload } from "./<%= upper_name %>Payload.type";
+
+export type T_<%= upper_name %>Actions =
+  ActionMap<T_<%= upper_name %>Payload>[keyof ActionMap<T_<%= upper_name %>Payload>];

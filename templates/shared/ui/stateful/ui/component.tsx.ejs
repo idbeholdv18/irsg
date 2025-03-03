@@ -1,0 +1,12 @@
+import { ReactNode } from "react";
+import { <%= upper_name %>Provider } from "./<%= upper_name %>.provider";
+
+interface <%= upper_name %>Props {
+  children: ReactNode;
+}
+
+type T_<%= upper_name %> = React.FC<<%= upper_name %>Props> & {};
+
+export const <%= upper_name %>: T_<%= upper_name %> = (props) => {
+  return <<%= upper_name %>Provider>{props.children}</<%= upper_name %>Provider>;
+};

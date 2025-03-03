@@ -1,0 +1,8 @@
+import { createContext, Dispatch } from "react";
+import { T_<%= upper_name %>Actions } from "../actions/<%= upper_name %>Action.type";
+
+export const dispatch<%= upper_name %>InitialState: Dispatch<T_<%= upper_name %>Actions> = () => {};
+
+export const Dispatch<%= upper_name %>Context = createContext<Dispatch<T_<%= upper_name %>Actions>>(
+  dispatch<%= upper_name %>InitialState
+);
