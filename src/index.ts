@@ -8,6 +8,8 @@ import { Layer } from "./layers/Layer.enum";
 import { chooseLayer } from "./inquirer/chooseLayer";
 import { chooseName } from "./inquirer/chooseName";
 import { createReactApp } from "./cra";
+import { promptComponentName } from "./shared/ui/inquirer/promptComponentName";
+import { generateComponent } from "./shared/ui/generateComponent";
 
 const program = new Command();
 
@@ -33,7 +35,15 @@ program
   .command("create-app")
   .description("Creates react app")
   .action(async (option) => {
-    createReactApp(); 
+    createReactApp();
+  });
+
+program
+  .command("ui")
+  .description("Creates ui kit component")
+  .action(async (option) => {
+    const componentName = await promptComponentName();
+    generateComponent(componentName);
   });
 
 program.parse(process.argv);
